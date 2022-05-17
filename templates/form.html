@@ -1,0 +1,273 @@
+<!doctype html>
+<html>
+    <head>
+        <title></title>
+        <style type="text/css">
+            *{
+                margin:0;
+                padding:0;
+            }
+            body{
+                background-image:url("../static/images/plain.jpg");
+                background-position:center;
+                background-size:cover;
+                font-family:sans-serif;
+                margin-top:40px;
+            }
+        .regform{
+            width: 800px;
+            background-color:rgb(0,0,0,0.6);
+            margin:auto;
+            color:#FFF;
+            padding: 10px 0px 10px 0px;
+            text-align:center;
+            border: radius 15px 15px 0px 0px;
+        }
+        .main{
+            background-color:rgb(0,0,0,0.5);
+            width:800px;
+            margin:auto;
+        }
+        form{
+            padding:30px;
+        }
+    #name{
+        width:100%;
+        height:100px;
+    }
+    .name{
+        margin: left 25px;
+        margin-top:30px;
+        width:125px;
+        color:white;
+        font-size:18px;
+        font-weight:700;
+    }
+    .firstname{
+        position: relative;
+        left: 200px;
+        top: -37px;
+        line-height: 40px;
+        border-radius: 6px;
+        padding:0 22px;
+        font: size 16px;
+    }
+    .lastname{
+        position: relative;
+        left: 417px;
+        top: -80px;
+        line-height: 40px;
+        border-radius: 6px;
+        padding: 0 22px;
+        font-size: 16px;
+        color:#555;
+    }
+    .firstlabel{
+        position: relative;
+        color:E5E5E5;
+        text-transform:capitalize;
+        font-size:14px;
+        left: 203px;
+        top: -45px;
+    }
+    .lastlabel{
+        position: relative;
+        color:E5E5E5;
+        text-transform:capitalize;
+        font-size:14px;
+        left: 175px;
+        top: -45px;
+    }
+    .email{
+        position: relative;
+        left: 200px;
+        top: -37px;
+        line-height: 40px;
+        width: 480px;
+        border-radius: 6px;
+        padding: 0 22px;
+        font-size: 16px;
+        color: #555;
+    }
+    .option{
+        position: relative;
+        left: 200px;
+        top: -37px;
+        line-height: 40px;
+        width: 532px;
+        height: 40px;
+        border-radius: 6px;
+        padding: 0 22px;
+        font-size: 16px;
+        color: #555;
+        outline: none;
+        overflow: hidden;
+    }
+    .option option{
+        font-size: 20px;
+    }
+    #familytype{
+        margin-left: 25px;
+        color: white;
+        font-size: 18px;
+    }
+    .radio{
+        display: inline-block;
+        padding-right: 70px;
+        font-size: 20px;
+        line-height: 70px;
+        margin-left: 25px;
+        margin-top: 15px;
+        color: white;
+    }
+    .radio input{
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        cursor: pointer;
+        outline: none;
+    }
+    button{
+        background-color: #3BAF9F;
+        display: block;
+        margin: 20px 0px 0px 20px;
+        text-align: center;
+        border-radius: 12px;
+        border: 2px solid #366473;
+        padding: 14px 110px;
+        outline: none;
+        color: white;
+        cursor: pointer;
+        transition: 0.25px;
+    }
+    button:hover{
+        background-color:#5390F5;
+    }
+
+
+        </style>
+    </head>
+    <body>
+        <div class="regform"><h1> Mental Health Prediction Registration Form</h1></div>
+        <div class="main">
+            <form action="/result" method="POST">
+                <div id="name">
+                    <h2 class="name">Name</h2>
+                    <input class="firstname" type="text" name="first_name"><br>
+                    <label class="firstlabel">first name</label>
+                    <input class="lastname" type="text" name="last_name">
+                    <label class="lastlabel">last name</label>
+                </div>
+                <h2 class="name">Email</h2>
+                <input class="email" type="text" name="email">
+                <h2 class="name">Gender</h2>
+                <select class="option" name="gender">
+                    <option disabled="disabled" selected="selected">--Choose Option</option>
+                    <option name="gender" value="male">Male</option>
+                    <option name="gender" value="female">Female</option>
+                    <!-- <option>Prefer not to say</option> -->
+                </select>
+                <h2 id="familytype">What''s your family type ?</h2>
+                <label class="radio">
+                    <input class="radio-one" type="radio" name="family" value="0">
+                    <span class="checkmark"></span>
+                    Joint family
+                </label>
+                <label class="radio">
+                    <input class="radio-two" type="radio" name="family" value="1">
+                    <span class="checkmark"></span>
+                    Small family
+                </label>
+                <h2 class="name">Family Income (Annually)</h2>
+                <select class="option" name="income">
+                    <option disabled="disabled" selected="selected">--Choose Option</option>
+                    <option name="income" value="2">Below 8 Lakhs</option>
+                    <option name="income" value="0">8-15 Lakhs</option>
+                    <option name="income" value="1">Above 15 Lakhs</option>
+                </select>
+                <h2 class="name">Eating Lifestyle</h2>
+                <select class="option" name="eating">
+                    <option disabled="disabled" selected="selected">--Choose Option</option>
+                    <option name="eating" value="0">Fast Food</option>
+                    <option name="eating" value="3">Mess</option>
+                    <option name="eating" value="1">Home Cooked Food</option>
+                    <option name="eating" value="2">Irregularity</option>
+                </select>
+                <h2 class="name">Is there any addiction in your friend circle ?</h2>
+                <select class="option" name="friendaddiction">
+                    <option disabled="disabled" selected="selected">--Choose Option</option>
+                    <option name="addiction_friend" value="0">Alcoholic</option>
+                    <option name="addiction_friend" value="3">Smokers</option>
+                    <option name="addiction_friend" value="1">Alcoholic and Smokers</option>
+                    <option name="addiction_friend" value="2">None</option>
+                </select>
+                <h2 class="name">Do you have any addiction ?</h2>
+                <select class="option" name="addiction">
+                    <option disabled="disabled" selected="selected">--Choose Option</option>
+                    <option name="addiction_self" value="3">Smoking</option>
+                    <option name="addiction_self" value="0">Drinking</option>
+                    <option name="addiction_self" value="1">Smoking and Drinking</option>
+                    <option name="addiction_self" value="2">None</option>
+                </select>
+                <h2 id="familytype">Do you have any past health issue/ history</h2>
+                <label class="radio">
+                    <input class="radio-one" type="radio" name="medical_history" value="1">
+                    <span class="checkmark"></span>
+                    Yes
+                </label>
+                <label class="radio">
+                    <input class="radio-two" type="radio" name="medical_history" value="0">
+                    <span class="checkmark"></span>
+                    No
+                </label>
+                <h2 id="familytype">Do you have any depression</h2>
+                <label class="radio">
+                    <input class="radio-one" type="radio" name="depressed" value="1">
+                    <span class="checkmark"></span>
+                    Yes
+                </label>
+                <label class="radio">
+                    <input class="radio-two" type="radio" name="depressed" value="0">
+                    <span class="checkmark"></span>
+                    No
+                </label>
+                <h2 id="familytype">Do you have any type of anxiety</h2>
+                <label class="radio">
+                    <input class="radio-one" type="radio" name="anxiety" value="1">
+                    <span class="checkmark"></span>
+                    Yes
+                </label>
+                <label class="radio">
+                    <input class="radio-two" type="radio" name="anxiety" value="0">
+                    <span class="checkmark"></span>
+                    No
+                </label>
+                <h2 id="familytype">Are you happy with your current situations and decision ?</h2>
+                <label class="radio">
+                    <input class="radio-one" type="radio" name="happy" value="1">
+                    <span class="checkmark"></span>
+                    Yes
+                </label>
+                <label class="radio">
+                    <input class="radio-two" type="radio" name="happy" value="0">
+                    <span class="checkmark"></span>
+                    No
+                </label>
+                <h2 id="familytype">Have you ever felt suicidal in your last 1-2 years ?</h2>
+                <label class="radio">
+                    <input class="radio-one" type="radio" name="suicidal_thoughts" value="1">
+                    <span class="checkmark"></span>
+                    Yes
+                </label>
+                <label class="radio">
+                    <input class="radio-two" type="radio" name="suicidal_thoughts" value="0">
+                    <span class="checkmark"></span>
+                    No
+                </label>
+
+                <button type="submit">Submit</button>
+                <input type="reset" value="Reset">
+            </form>
+        </div>
+    </body>
+</html>
