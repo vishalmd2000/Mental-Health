@@ -50,11 +50,20 @@ def result():
         }
         print(dic)
         x = main_single.suicide(dic)
-        if x[0]:
-            if x[0] == 0:
-                return "<h1>You are not Suicidal</h1>"
+        print("this is X \n\n\n")
+        print(x)
+        print(type(x))
+        print(type(x[0]))
+        if x[0] != None:
+            if int(x[0]) == 0:
+                print("\n\n\tI AM NOT SUICIDAL\n\n")
+                return render_template('not_suicidal.html')
             else:
-                return "<h1>You ARE Suicidal</h1>"
+                return render_template('suicidal.html')
+
+@app.route("/test")
+def test():
+    return render_template('not_suicidal.html')
 
 
 @app.route("/download")
